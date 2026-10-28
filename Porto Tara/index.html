@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Muhamad Rafi Btara Tsaqif Mulyohartono</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins (Header) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-heading font-bold text-xl text-indigo-400 tracking-wider">
+                TARA <span class="text-white">PORTFOLIO</span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-indigo-400 transition-colors">About Me</a>
+                <a href="#experience" class="hover:text-indigo-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-indigo-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-indigo-400 transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://wa.me/6285711206617" target="_blank" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm rounded-full transition-all shadow-lg shadow-indigo-600/20">
+                    Contact Me
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 flex flex-col gap-4">
+            <a href="#about" class="mobile-link text-slate-300 hover:text-indigo-400">About Me</a>
+            <a href="#experience" class="mobile-link text-slate-300 hover:text-indigo-400">Experience</a>
+            <a href="#projects" class="mobile-link text-slate-300 hover:text-indigo-400">Projects</a>
+            <a href="#contact" class="mobile-link text-slate-300 hover:text-indigo-400">Contact</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="pt-32 pb-20 md:pt-40 md:py-32 relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wide uppercase">
+                    <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+                    Junior Programmer & Information System Student
+                </div>
+                <h1 class="font-heading text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight">
+                    Hello, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Muhamad Rafi Btara T.M</span>
+                </h1>
+                <p class="text-slate-400 text-base md:text-lg max-w-lg mx-auto md:mx-0">
+                    I am an Information Systems student with a strong interest in programming and web development. I am currently developing my skills in HTML, CSS, Python, and MySQL to build attractive, responsive, and functional websites. <br>
+                    <br>I enjoy learning new technologies, exploring solutions to various problems, and developing projects to improve my technical skills. With a strong willingness to learn and a commitment to continuous improvement, I aspire to become a skilled Full-Stack Developer and contribute to innovative technology projects.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
+                    <a href="#projects" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-xl transition-all shadow-lg shadow-indigo-600/25 flex items-center gap-2">
+                        <span>View Projects</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1FRyWVDusLfmfUzyOwC-K_MzolKJbdc3y/view?usp=sharing" target="_blank" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-medium rounded-xl transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-file-pdf text-red-400"></i>
+                        <span>PDF Portfolio</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROFILE PHOTO -->
+            <div class="flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-slate-800 shadow-2xl bg-slate-900 group">
+                    <img id="profile-photo" src="taraaelah.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section id="about" class="py-20 bg-slate-900/50 border-t border-slate-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white">About Me</h2>
+                <div class="w-12 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+                <p class="text-slate-400 text-sm md:text-base">Get to know my background, education, and hobbies.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-4 text-slate-300 leading-relaxed text-sm md:text-base">
+                    <p>
+                        Hello everyone, my name is <strong>Muhamad Rafi Btara Tsaqif Mulyohartono</strong>,I am interested in diving into the world of IT
+                    </p>
+                    <p>
+                        My hobbies include listening to music, and the instrument I am most proficient in is the guitar (achieved Solo Guitar competition awards during high school). Currently, I am deeply interested in the world of IT, especially Information Systems.
+                    </p>
+                    <div class="pt-4 grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <h4 class="font-heading font-semibold text-white text-lg">2025 - 2029</h4>
+                            <p class="text-xs text-slate-400">Bhakti Pertiwi Indonesia Univ.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <h4 class="font-heading font-semibold text-white text-lg">Junior</h4>
+                            <p class="text-xs text-slate-400">Programmer & Developer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack & Skills Badges -->
+                <div class="bg-slate-900 p-6 md:p-8 rounded-3xl border border-slate-800 space-y-6">
+                    <h3 class="font-heading text-lg font-semibold text-white">Skills & Technologies</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-xl bg-slate-800 text-slate-200 text-sm font-medium flex items-center gap-2 border border-slate-700">
+                            <i class="fa-brands fa-python text-yellow-300 text-lg"></i> Python (Basic)
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800 text-slate-200 text-sm font-medium flex items-center gap-2 border border-slate-700">
+                            <i class="fa-solid fa-code text-indigo-400 text-lg"></i> Web Dev Basics
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800 text-slate-200 text-sm font-medium flex items-center gap-2 border border-slate-700">
+                            <i class="fa-solid fa-pen-nib text-pink-400 text-lg"></i> Poster & IG Design
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800 text-slate-200 text-sm font-medium flex items-center gap-2 border border-slate-700">
+                            <i class="fa-solid fa-file-powerpoint text-orange-400 text-lg"></i> PPT Decking
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800 text-slate-200 text-sm font-medium flex items-center gap-2 border border-slate-700">
+                            <i class="fa-solid fa-video text-blue-400 text-lg"></i> Video Editing
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800 text-slate-200 text-sm font-medium flex items-center gap-2 border border-slate-700">
+                            <i class="fa-solid fa-file-word text-blue-500 text-lg"></i> Microsoft Word
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white">My Experience & Education</h2>
+                <div class="w-12 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+                <p class="text-slate-400 text-sm md:text-base">My academic journey, community activities, and IT competitions.</p>
+            </div>
+
+            <div class="relative border-l border-slate-800 ml-4 md:ml-6 space-y-12">
+                <!-- Item 1 -->
+                <div class="relative pl-8 md:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-600 border-4 border-slate-950"></div>
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-2">
+                        <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">June 2026</span>
+                        <h3 class="font-heading text-xl font-bold text-white">Hackathon Web Application Participant (Play IT)</h3>
+                        <p class="text-xs text-slate-400 font-medium">Politeknik Negeri Malang National Competition</p>
+                        <p class="text-slate-300 text-sm pt-2 leading-relaxed">
+                            Participated as a contestant in the National Web Application Hackathon organized by the Information Technology Department of State Polytechnic of Malang.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative pl-8 md:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-600 border-4 border-slate-950"></div>
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-2">
+                        <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">February 2026</span>
+                        <h3 class="font-heading text-xl font-bold text-white">Committee for Community Service (Pengabdian Kepada Masyarakat)</h3>
+                        <p class="text-xs text-slate-400 font-medium">Desa Susukan, Bojonggede, Bogor</p>
+                        <p class="text-slate-300 text-sm pt-2 leading-relaxed">
+                            Served as committee member for Digital Law Literacy and Data Security Enhancement via Integrated Information Systems for village communities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative pl-8 md:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-600 border-4 border-slate-950"></div>
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-2">
+                        <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">2025 - 2029</span>
+                        <h3 class="font-heading text-xl font-bold text-white">Bhakti Pertiwi Indonesia University</h3>
+                        <p class="text-xs text-slate-400 font-medium">Undergraduate Information Systems Student</p>
+                        <p class="text-slate-300 text-sm pt-2 leading-relaxed">
+                            Pursuing a bachelor's degree in Information Systems, focusing on system development, digital solutions, and IT applications.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="relative pl-8 md:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-600 border-4 border-slate-950"></div>
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-2">
+                        <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">2023 - 2025</span>
+                        <h3 class="font-heading text-xl font-bold text-white">SMAN 97 Jakarta</h3>
+                        <p class="text-xs text-slate-400 font-medium">High School Student (Interest: Social Studies)</p>
+                        <p class="text-slate-300 text-sm pt-2 leading-relaxed">
+                            Active in school organization, events, and awarded 1st Runner-Up (Juara Harapan 1) in Solo Guitar Competition across South Jakarta Education Office Region I.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- PROJECTS -->
+    <section id="projects" class="py-20 bg-slate-900/50 border-t border-slate-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white">Featured Projects</h2>
+                <div class="w-12 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+                <p class="text-slate-400 text-sm md:text-base">ERP and Web apps I have developed.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden flex flex-col group hover:border-indigo-500/50 transition-all">
+                    <!-- Project Image Placeholder (Replace src with your own image) -->
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="ERP.png" alt="ERP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-950/80 text-emerald-400 border border-slate-700">ERP</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow space-y-4">
+                        <h3 class="font-heading text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">ERP CCTV & Smart Lock</h3>
+                        <p class="text-slate-400 text-sm flex-grow leading-relaxed">
+                            This Project is an Enterprise Resource Planning (ERP) web-based system specifically designed to manage the operational activities of retail businesses and distributors specializing in home and office security devices, such as surveillance cameras (CCTV) and smart locks.
+                        </p>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs text-slate-500 font-medium">Project 1</span>
+                            <a href="https://erp-cctv-smrtlock.netlify.app/" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-400 hover:text-indigo-300">
+                                <span>View Project</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden flex flex-col group hover:border-indigo-500/50 transition-all">
+                    <!-- Project Image Placeholder (Replace src with your own image) -->
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="CCTV.jpeg" alt="CCTV" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-950/80 text-indigo-400 border border-slate-700">Web App</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow space-y-4">
+                        <h3 class="font-heading text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">EZVIZ H1c : Monitor a Single Room Easily</h3>
+                        <p class="text-slate-400 text-sm flex-grow leading-relaxed">
+                            EZVIZ H1c Landing Page is a responsive, modern web page designed for PT Digital Abadi Gemilang to market and sell the EZVIZ H1c Full HD 1080p indoor security camera. Built with Tailwind CSS, the platform features a clean user interface optimized for potential customers looking for reliable, user-friendly, and cost-effective indoor surveillance solutions.
+                        </p>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs text-slate-500 font-medium">Project 2</span>
+                            <a href="https://bucolic-youtiao-cafdf6.netlify.app" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-400 hover:text-indigo-300">
+                                <span>View Project</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden flex flex-col group hover:border-indigo-500/50 transition-all">
+                    <!-- Project Image Placeholder (Replace src with your own image) -->
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="FIDO.jpeg" alt="FIDO-2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-950/80 text-purple-400 border border-slate-700">Web App</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow space-y-4">
+                        <h3 class="font-heading text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">iShield Key 2 : Ultimate FIDO2 & MIFARE Security Key</h3>
+                        <p class="text-slate-400 text-sm flex-grow leading-relaxed">
+                           This is a website to showcase, order, and learn about the Swissbit iShield Key 2, featuring phishing-resistant FIDO2/WebAuthn authentication and integrated MIFARE® DESFire® access control.
+                        </p>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs text-slate-500 font-medium">Project 3</span>
+                            <a href="https://amazing-pastelito-af4175.netlify.app/" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-400 hover:text-indigo-300">
+                                <span>View Project</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & SOCIAL MEDIA -->
+    <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <div class="space-y-3">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white">Contact Me</h2>
+                <div class="w-12 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+                <p class="text-slate-400 text-sm md:text-base max-w-lg mx-auto">
+                    Interested in collaborating or discussing projects? Reach out to me through the channels below!
+                </p>
+            </div>
+
+            <!-- Social Links Grid (Target Blank) -->
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/6285711206617" target="_blank" class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 hover:text-indigo-400 transition-all shadow-md group">
+                    <i class="fa-brands fa-whatsapp text-green-400 text-xl group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">WhatsApp</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/muhamad-rafi-btara-tsaqif-mulyohartono-1102273b2?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 hover:text-indigo-400 transition-all shadow-md group">
+                    <i class="fa-brands fa-linkedin text-blue-500 text-xl group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">LinkedIn</span>
+                </a>
+
+                <!-- PDF Portfolio (Google Drive) -->
+                <a href="https://drive.google.com/file/d/1FRyWVDusLfmfUzyOwC-K_MzolKJbdc3y/view?usp=sharing" target="_blank" class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 hover:text-indigo-400 transition-all shadow-md group">
+                    <i class="fa-solid fa-file-pdf text-red-400 text-xl group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">PDF Portfolio</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/btaratsaqif_?srtk=YmR3Z2locTNzMWM=" target="_blank" class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 hover:text-indigo-400 transition-all shadow-md group">
+                    <i class="fa-brands fa-instagram text-pink-500 text-xl group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">Instagram (@btaratsaqif)</span>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@btaratsaqif" target="_blank" class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 hover:text-indigo-400 transition-all shadow-md group">
+                    <i class="fa-brands fa-tiktok text-white text-xl group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">TikTok</span>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://youtube.com/@btaratsaqif?si=nPMVSPG96KIiPrKi" target="_blank" class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 hover:text-indigo-400 transition-all shadow-md group">
+                    <i class="fa-brands fa-youtube text-red-500 text-xl group-hover:scale-110 transition-transform"></i>
+                    <span class="font-medium text-sm">YouTube</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-900 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-6 space-y-2">
+            <p>&copy; 2026 Muhamad Rafi Btara Tsaqif Mulyohartono. Built with passion.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT FOR MOBILE MENU -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
