@@ -26,6 +26,85 @@
             }
         }
     </script>
+    <style>
+        /* Fire Flame Aura Animation Styles (Adaptive Colors) */
+        @keyframes flamePulse {
+            0% {
+                box-shadow: 0 0 20px var(--flame-color-1),
+                            0 0 45px var(--flame-color-2),
+                            0 0 70px var(--flame-color-3),
+                            inset 0 0 15px var(--flame-color-1);
+            }
+            50% {
+                box-shadow: 0 0 35px var(--flame-color-1),
+                            0 0 65px var(--flame-color-2),
+                            0 0 95px var(--flame-color-3),
+                            inset 0 0 25px var(--flame-color-2);
+            }
+            100% {
+                box-shadow: 0 0 20px var(--flame-color-1),
+                            0 0 45px var(--flame-color-2),
+                            0 0 70px var(--flame-color-3),
+                            inset 0 0 15px var(--flame-color-1);
+            }
+        }
+
+        @keyframes flameRise {
+            0% {
+                transform: translateY(0) scale(1) rotate(0deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-25px) scale(1.2) rotate(8deg);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-50px) scale(0.6) rotate(-8deg);
+                opacity: 0;
+            }
+        }
+
+        /* Default Light Mode: Purple Flame Colors */
+        :root {
+            --flame-color-1: rgba(168, 85, 247, 0.8);
+            --flame-color-2: rgba(147, 51, 234, 0.6);
+            --flame-color-3: rgba(236, 72, 153, 0.4);
+            --particle-grad: radial-gradient(circle, rgba(236,72,153,1) 0%, rgba(168,85,247,0.8) 50%, rgba(147,51,234,0) 100%);
+            --flame-border: rgba(168, 85, 247, 0.9);
+        }
+
+        /* Dark Mode: Blue Flame Colors */
+        html.dark {
+            --flame-color-1: rgba(59, 130, 246, 0.85);
+            --flame-color-2: rgba(6, 182, 212, 0.65);
+            --flame-color-3: rgba(99, 102, 241, 0.45);
+            --particle-grad: radial-gradient(circle, rgba(103,232,249,1) 0%, rgba(59,130,246,0.85) 50%, rgba(37,99,235,0) 100%);
+            --flame-border: rgba(59, 130, 246, 0.9);
+        }
+
+        .fire-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        .fire-glow {
+            animation: flamePulse 2s infinite ease-in-out;
+            border-color: var(--flame-border) !important;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Ambient flame particles */
+        .fire-particle {
+            position: absolute;
+            bottom: -10px;
+            background: var(--particle-grad);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: flameRise 2.2s infinite ease-out;
+            filter: blur(3px);
+            transition: background 0.3s ease;
+        }
+    </style>
 </head>
 <body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
 
@@ -41,7 +120,7 @@
                 <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About Me</a>
                 <a href="#experience" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Experience</a>
                 <a href="#projects" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a>
+                <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Social Media</a>
             </nav>
 
             <div class="hidden md:flex items-center gap-4">
@@ -103,11 +182,21 @@
                 </div>
             </div>
 
-            <!-- PROFILE PHOTO -->
+            <!-- PROFILE PHOTO WITH FIRE EFFECT -->
             <div class="flex justify-center">
-                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-slate-200 dark:border-slate-800 shadow-2xl bg-slate-100 dark:bg-slate-900 group">
-                    <img id="profile-photo" src="taraaelah.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                <div class="fire-wrapper relative">
+                    <!-- Fire Container Photo -->
+                    <div class="fire-glow relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 shadow-2xl bg-slate-100 dark:bg-slate-900 group">
+                        <img id="profile-photo" src="taraaelah.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-950/40 dark:from-blue-950/60 via-transparent to-transparent opacity-80 pointer-events-none transition-colors"></div>
+                    </div>
+
+                    <!-- Animated Fire Spark Particles -->
+                    <div class="fire-particle w-6 h-6 left-4" style="animation-delay: 0s;"></div>
+                    <div class="fire-particle w-4 h-4 left-16" style="animation-delay: 0.6s;"></div>
+                    <div class="fire-particle w-8 h-8 left-32" style="animation-delay: 1.2s;"></div>
+                    <div class="fire-particle w-5 h-5 left-48" style="animation-delay: 0.4s;"></div>
+                    <div class="fire-particle w-7 h-7 right-6" style="animation-delay: 1.8s;"></div>
                 </div>
             </div>
         </div>
@@ -275,7 +364,7 @@
                     <div class="p-6 flex flex-col flex-grow space-y-4">
                         <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">EZVIZ H1c Website</h3>
                         <p class="text-slate-600 dark:text-slate-400 text-sm flex-grow leading-relaxed text-justify">
-                            EZVIZ H1c Landing Page is a responsive, modern web page designed to market and sell the EZVIZ H1c Full HD 1080p indoor security camera.
+                            EZVIZ H1c Landing Page is a responsive, modern web page designed for PT Digital Abadi Gemilang to market and sell the EZVIZ H1c Full HD 1080p indoor security camera. Built with Tailwind CSS, the platform features a clean user interface optimized for potential customers looking for reliable, user-friendly, and cost-effective indoor surveillance solutions.
                         </p>
                         <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                             <span class="text-xs text-slate-400 dark:text-slate-500 font-medium">Project 2</span>
@@ -315,7 +404,7 @@
     <section id="contact" class="py-20 transition-colors">
         <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
             <div class="space-y-3">
-                <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Contact Me</h2>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Find Me Online!</h2>
                 <div class="w-12 h-1 bg-indigo-500 mx-auto rounded-full"></div>
                 <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base max-w-lg mx-auto">
                     Interested in collaborating or discussing projects? Reach out to me through the channels below!
@@ -336,16 +425,10 @@
                     <span class="font-medium text-sm">LinkedIn</span>
                 </a>
 
-                <!-- PDF Portfolio -->
-                <a href="https://drive.google.com/file/d/1FRyWVDusLfmfUzyOwC-K_MzolKJbdc3y/view?usp=sharing" target="_blank" class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all shadow-sm group">
-                    <i class="fa-solid fa-file-pdf text-red-500 text-xl group-hover:scale-110 transition-transform"></i>
-                    <span class="font-medium text-sm">PDF Portfolio</span>
-                </a>
-
                 <!-- Instagram -->
                 <a href="https://www.instagram.com/btaratsaqif_?srtk=YmR3Z2locTNzMWM=" target="_blank" class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all shadow-sm group">
                     <i class="fa-brands fa-instagram text-pink-600 text-xl group-hover:scale-110 transition-transform"></i>
-                    <span class="font-medium text-sm">Instagram (@btaratsaqif)</span>
+                    <span class="font-medium text-sm">Instagram</span>
                 </a>
 
                 <!-- TikTok -->
@@ -366,7 +449,7 @@
     <!-- FOOTER -->
     <footer class="py-8 bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 text-center text-xs text-slate-500 transition-colors">
         <div class="max-w-6xl mx-auto px-6 space-y-2">
-            <p>&copy; 2026 Muhamad Rafi Btara Tsaqif Mulyohartono. Built with passion.</p>
+            <p>&copy; 2026 Muhamad Rafi Btara Tsaqif Mulyohartono.</p>
         </div>
     </footer>
 
